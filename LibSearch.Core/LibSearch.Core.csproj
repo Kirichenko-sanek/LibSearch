@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Intefaces\Manager\IManager.cs" />
+    <Compile Include="Intefaces\Manager\IUserManager.cs" />
     <Compile Include="Intefaces\Repository\IRepository.cs" />
+    <Compile Include="Intefaces\Validator\IValidator.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Genre.cs" />
@@ -49,6 +52,7 @@
     <Compile Include="Model\SavedBook.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

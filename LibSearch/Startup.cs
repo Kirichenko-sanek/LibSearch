@@ -25,7 +25,7 @@ namespace LibSearch
             OAuthAuthorizationServerOptions oAuthServerOptions = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/token"),
-                Provider = new ApplicationOAuthProvider(MvcApplication._container.Resolve<IUserManager<User>>()),
+                Provider = new ApplicationOAuthProvider(WebApiApplication._container.Resolve<IUserManager<User>>()),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 AllowInsecureHttp = true
             };
