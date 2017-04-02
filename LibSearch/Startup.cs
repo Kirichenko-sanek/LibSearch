@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using LibSearch.Core.Intefaces.Manager;
+using LibSearch.Core.Model;
+using LibSearch.Providers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
@@ -9,7 +10,31 @@ using Owin;
 
 namespace LibSearch
 {
-    public class Startup
+    public partial class Startup
     {
+        public void Configuration(IAppBuilder app)
+        {
+            ConfigureOAuth(app);
+
+        }
+
+        public void ConfigureOAuth(IAppBuilder app)
+        {
+
+            OAuthBearerAuthenticationOptions oAuthBearerOptions = new OAuthBearerAuthenticationOptions();
+            OAuthAuthorizationServerOptions oAuthServerOptions = new OAuthAuthorizationServerOptions
+            {
+                TokenEndpointPath = new PathString("/token"),
+                Provider = new ApplicationOAuthProvider(MvcApplication._container.Resolve<IUserManager<User>>()),
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                AllowInsecureHttp = true
+            };
+
+            app.UseOAuthAuthorizationServer(oAuthServerOptions);
+            app.UseOAuthBearerAuthentication(oAuthBearerOptions);
+
+        }
+
+
     }
 }
