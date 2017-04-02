@@ -1,7 +1,4 @@
 ﻿using System.Web.Http.Controllers;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
 using LibSearch.BL.Manager;
 using LibSearch.BL.Validator;
 using LibSearch.Core.Intefaces.Manager;
@@ -10,6 +7,9 @@ using LibSearch.Core.Intefaces.Validator;
 using LibSearch.Core.Model;
 using LibSearch.Data;
 using LibSearch.Data.Repository;
+using Castle.MicroKernel.Registration;
+using Castle.MicroKernel.SubSystems.Configuration;
+using Castle.Windsor;
 
 namespace LibSearch.CW.Installers
 {
@@ -17,7 +17,7 @@ namespace LibSearch.CW.Installers
     {
         private const string WebAssemblyName = "LibSearch";
 
-        public void Insatll(IWindsorContainer container, IConfigurationStore store)
+        public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Classes.FromAssemblyNamed(WebAssemblyName)
                 .BasedOn<IHttpController>()
