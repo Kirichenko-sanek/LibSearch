@@ -1,0 +1,18 @@
+loginPage
+
+<div>
+	<form ng-submit="login()" name="userLoginForm" role="form" method="post">
+		<input 
+			type="email" 
+			name="email" 
+			ng-model="model.email" 
+			required>
+		<input 
+			type="password" 
+			name="pass" 
+			ng-model="model.password" 
+			required>
+
+		<button type="submit">LogIn</button>
+	</form>
+</div>

@@ -65,6 +65,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\LibSearch.BL\LibSearch.BL.csproj">
+      <Project>{359511f9-d87e-4fc5-8065-b56914bfd517}</Project>
+      <Name>LibSearch.BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LibSearch.Core\LibSearch.Core.csproj">
       <Project>{4e2e7ad0-9fbf-4fef-a005-d9b1cce9d101}</Project>
       <Name>LibSearch.Core</Name>

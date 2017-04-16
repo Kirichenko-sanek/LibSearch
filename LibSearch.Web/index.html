@@ -13,9 +13,38 @@
 <body ng-controller="rootController">
 header
 
+<div ng-if="!userLog">
+	<a href="/login">Login</a>
+</div>
+
+<div ng-if="userLog">
+	<a href="" ng-click="logoff()">LogOff</a>
+</div>
+
 <div class="page {{ pageClass }}" ng-view="ng-view"></div>
 	
+	
+	<!-- htmlbuild:js -->
+	<script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+  <script src="bower_components/oi.file/oi.file.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-material/angular-material-mocks.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/ngprogress/build/ngProgress.js"></script>
 
+  <script src="app/app.js"></script>
+  <script src="app/home/rootController.js"></script>
+  <script src="app/home/homeController.js"></script>
+  <script src="app/LogIn/logInController.js"></script>
+
+  <script src="service/logInService.js"></script>
+
+	<!-- endbuild  -->
 
 </body>
 
