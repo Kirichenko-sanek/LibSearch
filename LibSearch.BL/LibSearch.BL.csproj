@@ -57,6 +57,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -107,6 +108,10 @@
     <ProjectReference Include="..\LibSearch.Core\LibSearch.Core.csproj">
       <Project>{4e2e7ad0-9fbf-4fef-a005-d9b1cce9d101}</Project>
       <Name>LibSearch.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibSearch.Resources\LibSearch.Resources.csproj">
+      <Project>{cae2133b-f3ca-42d1-a0a3-21e33815b170}</Project>
+      <Name>LibSearch.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
