@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using LibSearch.BL;
 using LibSearch.Core.Model;
 using LibSearch.Data.Mapping;
 
@@ -32,7 +33,7 @@ namespace LibSearch.Data
 
 
 
-        private class LibSearchInitializer : CreateDatabaseIfNotExists<DataContext>
+        private class LibSearchInitializer : DropCreateDatabaseAlways<DataContext>
         {
             protected override void Seed(DataContext context)
             {
@@ -48,6 +49,37 @@ namespace LibSearch.Data
                     }
                 };
                 foreach (var role in roles) context.Roles.Add(role);
+                context.SaveChanges();
+
+                var photos = new List<Photo>
+                {
+                    new Photo()
+                    {
+                        Url = "/assets/images/users/1.jpg"
+                    }
+                };
+                foreach (var photo in photos) context.Photos.Add(photo);
+                context.SaveChanges();
+
+
+
+                var salt = PasswordHashing.GenerateSaltValue();
+                var pass = PasswordHashing.HashPassword("123456", salt);
+                var users = new List<User>
+                {
+                    new User()
+                    {
+                        FirstName = "Alexander",
+                        LastName = "Kirichenko",
+                        Password = pass,
+                        PasswordSalt = salt,
+                        Email = "kirichenko-sanek@mail.ru",
+                        IsActivated = true,
+                        IdRole = 1,
+                        IdPhoto = 1
+                    }
+                };
+                foreach (var user in users) context.Users.Add(user);
                 context.SaveChanges();
 
 

@@ -1,5 +1,5 @@
 ﻿(function() {
-  window.angular.module('LibSearch', ['ngRoute', 'ngCookies', 'oi.file', 'LocalStorageModule', 'ngAria', 'ngAnimate', 'ngMaterial', 'ngProgress'])
+  window.angular.module('LibSearch', ['ngRoute', 'ngCookies', 'oi.file', 'LocalStorageModule', 'ngAria'/*, 'ngAnimate', 'ngMaterial', 'ngProgress'*/])
     .config(config)
     .run(run);
 
@@ -13,15 +13,17 @@
       .when('/', {
         templateUrl: "app/home/home.html",
         controller: "homeController"
+      })
+      .when("/login", {
+        templateUrl: "app/login/login.html",
+        controller: "logInController"
       });
-
-
-
   };
 
 
   function run(localStorageService, $http, $rootScope) {
-    $rootScope.localAddress = '/libsearchapi/';
+    //$rootScope.localAddress = '/libsearchapi/';
+    $rootScope.localAddress = 'http://localhost:60669/';
     var aut = localStorageService.get('authorizationData');
     if (aut !== null) {
       $http.defaults.headers.common['Authorization'] = 'Bearer ' + aut.token;
@@ -40,9 +42,7 @@
     } else {
       $rootScope.userLog = null;
     }
-
-
-  }
+  };
 
 
 
