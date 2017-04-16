@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
+using LibSearch.App_Start;
 using LibSearch.CW;
 using LibSearch.CW.Installers;
 
@@ -23,7 +24,7 @@ namespace LibSearch
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //MapperConfig.RegisterMapping();
+            MapperConfig.RegisterMapping();
 
             GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             ConfigureWindsor(GlobalConfiguration.Configuration);

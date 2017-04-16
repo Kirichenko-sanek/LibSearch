@@ -32,7 +32,7 @@ namespace LibSearch.Data
 
 
 
-        private class LibSearchInitializer : DropCreateDatabaseAlways<DataContext>
+        private class LibSearchInitializer : CreateDatabaseIfNotExists<DataContext>
         {
             protected override void Seed(DataContext context)
             {
