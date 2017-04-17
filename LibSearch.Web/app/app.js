@@ -17,6 +17,10 @@
       .when("/login", {
         templateUrl: "app/login/login.html",
         controller: "logInController"
+      })
+      .when("/admin", {
+      	templateUrl: "app/admin/admin.html",
+        controller: "adminController"
       });
   };
 
