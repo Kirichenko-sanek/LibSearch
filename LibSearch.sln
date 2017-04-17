@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch.Web", "LibSearch.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch.Resources", "LibSearch.Resources\LibSearch.Resources.csproj", "{CAE2133B-F3CA-42D1-A0A3-21E33815B170}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch.Crawler", "LibSearch.Crawler\LibSearch.Crawler.csproj", "{26F34651-E0E4-496E-B3D4-709336429653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch.Crawler.BL", "LibSearch.Crawler.BL\LibSearch.Crawler.BL.csproj", "{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{CAE2133B-F3CA-42D1-A0A3-21E33815B170}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE2133B-F3CA-42D1-A0A3-21E33815B170}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE2133B-F3CA-42D1-A0A3-21E33815B170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F34651-E0E4-496E-B3D4-709336429653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F34651-E0E4-496E-B3D4-709336429653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F34651-E0E4-496E-B3D4-709336429653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F34651-E0E4-496E-B3D4-709336429653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
