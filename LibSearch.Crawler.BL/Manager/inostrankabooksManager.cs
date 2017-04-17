@@ -32,10 +32,34 @@ namespace LibSearch.Crawler.BL.Manager
 
         public void GetInfo(string folder)
         {
+            var mainUrl = "http://inostrankabooks.ru";
             _inostrankabooksService.ProgresMax = 0;
             _inostrankabooksService.ProgresNow = 0;
 
-            var series = _inostrankabooksService.GetListSeries("http://inostrankabooks.ru/ru/series/");
+            var series = _inostrankabooksService.GetListSeries(mainUrl);
+
+            var pages = new List<string>();
+            Parallel.ForEach(series, i =>
+            {
+                var result = _inostrankabooksService.GetListPages(i, mainUrl);
+                if (result.Count > 0)
+                {
+                    foreach (var cout in result)
+                    {
+                        pages.Add(cout);
+                    }
+                }
+            });
+
+            var info = _inostrankabooksService.GetInfoBooks(pages, mainUrl);
+
+            var a = 0;
+
+
+
+
+            //var pages = _inostrankabooksService.GetListPages(series);
+
 
 
 

@@ -46,6 +46,7 @@
     <Compile Include="Intefaces\Validator\IValidator.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Crawler\BookOfInostrankabooks.cs" />
     <Compile Include="Model\Genre.cs" />
     <Compile Include="Model\Photo.cs" />
     <Compile Include="Model\Roles.cs" />

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using LibSearch.Core.Model.Crawler;
 
 namespace LibSearch.Crawler.BL.Interfaces.Service
 {
@@ -8,7 +9,9 @@ namespace LibSearch.Crawler.BL.Interfaces.Service
         int ProgresNow { get; set; }
 
         List<string> GetListSeries(string url);
+        List<string> GetListPages(string url, string mainUrl);
 
+        List<BookOfInostrankabooks> GetInfoBooks(List<string> urlList, string mainUrl);
 
     }
 }
