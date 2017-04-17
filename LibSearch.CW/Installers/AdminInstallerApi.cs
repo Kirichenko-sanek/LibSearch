@@ -36,6 +36,8 @@ namespace LibSearch.CW.Installers
             container.Register(Component.For(typeof(IManager<>)).ImplementedBy(typeof(Manager<>)).LifestyleTransient());
             container.Register(
                 Component.For(typeof(IUserManager<>)).ImplementedBy(typeof(UserManager<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IBookManager<>)).ImplementedBy(typeof(BookManager<>)).LifestyleTransient());
         }
     }
 }

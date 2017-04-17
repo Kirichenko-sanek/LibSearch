@@ -221,6 +221,10 @@
       <Project>{4e2e7ad0-9fbf-4fef-a005-d9b1cce9d101}</Project>
       <Name>LibSearch.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LibSearch.Crawler.BL\LibSearch.Crawler.BL.csproj">
+      <Project>{d2a9f3e0-03fc-40f9-83c7-d48d9225bd0f}</Project>
+      <Name>LibSearch.Crawler.BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LibSearch.CW\LibSearch.CW.csproj">
       <Project>{bcf73560-0f2e-40d2-b676-2cbf0e6c6002}</Project>
       <Name>LibSearch.CW</Name>
@@ -232,6 +236,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

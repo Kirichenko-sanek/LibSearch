@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddInfoOnDB.cs" />
     <Compile Include="Manager\Manager.cs" />
     <Compile Include="Manager\UserManager.cs" />
     <Compile Include="PasswordHashing.cs" />
