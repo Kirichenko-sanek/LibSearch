@@ -13,7 +13,6 @@ namespace LibSearch.Data.Mapping
             ToTable("Book");
 
             HasRequired(m=>m.Photo).WithMany(m=>m.Book).HasForeignKey(m=>m.IdPhoto).WillCascadeOnDelete(false);
-            HasRequired(m=>m.Genre).WithMany(m=>m.Books).HasForeignKey(m=>m.IdGenre).WillCascadeOnDelete(false);
         }
     }
 }

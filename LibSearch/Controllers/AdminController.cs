@@ -29,7 +29,7 @@ namespace LibSearch.Controllers
             var request = HttpContext.Current.Request.Files;
             var a = request["Files"];
             HttpPostedFileBase filebase = new HttpPostedFileWrapper(a);
-            var result = _bookManager.AddBooksOnDB(filebase);
+            _bookManager.AddBooksOnDB(filebase);
             return true;
         }
 

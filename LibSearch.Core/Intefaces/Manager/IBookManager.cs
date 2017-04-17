@@ -5,6 +5,6 @@ namespace LibSearch.Core.Intefaces.Manager
 {
     public interface IBookManager<T>: IManager<T> where T : Book
     {
-        bool AddBooksOnDB(HttpPostedFileBase filebase);
+        void AddBooksOnDB(HttpPostedFileBase filebase);
     }
 }
