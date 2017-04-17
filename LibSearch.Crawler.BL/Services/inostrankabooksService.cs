@@ -76,32 +76,32 @@ namespace LibSearch.Crawler.BL.Services
                 cout = pagesCout.Count + 1;
             }
             pagesList.Clear();
-            //Parallel.For(1, cout, i =>
-            //{
-            //    using (var wClient = new WebClient())
-            //    {
-            //        var html = new HtmlDocument();
-            //        try
-            //        {
-            //            html.LoadHtml(wClient.DownloadString(url + i + "/"));
-            //        }
-            //        catch (Exception)
-            //        {
-            //            return;
-            //        }
+            Parallel.For(1, cout, i =>
+            {
+                using (var wClient = new WebClient())
+                {
+                    var html = new HtmlDocument();
+                    try
+                    {
+                        html.LoadHtml(wClient.DownloadString(url + i + "/"));
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
 
-            //        var elements = html.DocumentNode.SelectNodes("//tr[@valign='top']/td[@width='185']/a");
-            //        if (elements == null)
-            //        {
-            //            return;
-            //        }
-            //        foreach (var item in elements)
-            //        {
-            //            pagesList.Add(mainUrl + item.GetAttributeValue("href", ""));
-            //        }
-            //    }
-            //});
-            pagesList.Add("http://inostrankabooks.ru/ru/book/24433/");
+                    var elements = html.DocumentNode.SelectNodes("//tr[@valign='top']/td[@width='185']/a");
+                    if (elements == null)
+                    {
+                        return;
+                    }
+                    foreach (var item in elements)
+                    {
+                        pagesList.Add(mainUrl + item.GetAttributeValue("href", ""));
+                    }
+                }
+            });
+            //pagesList.Add("http://inostrankabooks.ru/ru/book/24433/");
             return pagesList;
         }
 
@@ -125,60 +125,78 @@ namespace LibSearch.Crawler.BL.Services
                         return;
                     }
 
-                    info.Name =
-                        Encoding.UTF8.GetString(
-                            Encoding.Default.GetBytes(
-                                htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/h1")?.InnerText));
+                    try
+                    {
+                        info.Name =
+                            Encoding.UTF8.GetString(
+                                Encoding.Default.GetBytes(
+                                    htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/h1")?.InnerText)).Replace(";", ",");
 
-                    info.Photo =
-                        htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/img")?
-                            .GetAttributeValue("src", "");
+                        info.Photo =
+                            htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/img")?
+                                .GetAttributeValue("src", "");
 
-                    info.Category =
-                        Encoding.UTF8.GetString(
-                            Encoding.Default.GetBytes(
-                                htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/a[@class='seria_sm']")?
-                                    .InnerText));
+                        info.Category =
+                            Encoding.UTF8.GetString(
+                                Encoding.Default.GetBytes(
+                                    htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/a[@class='seria_sm']")
+                                        ?
+                                        .InnerText)).Replace(";", ",");
 
-                    info.Author =
-                        Encoding.UTF8.GetString(
-                            Encoding.Default.GetBytes(
-                                htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/a[@class='author']")?
-                                    .InnerText));
+                        info.Author =
+                            Encoding.UTF8.GetString(
+                                Encoding.Default.GetBytes(
+                                    htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/a[@class='author']")?
+                                        .InnerText)).Replace(";", ",");
 
-                    var elements = htmlInfo.DocumentNode.SelectSingleNode("//table[4]/tr/td");
+                        var elements = htmlInfo.DocumentNode.SelectSingleNode("//table[4]/tr/td");
+                        var result = "";
+                        foreach (var cout in elements.ChildNodes)
+                        {
+                            if (cout.Name == "#text")
+                            {
+                                result += cout.InnerText;
+                            }
 
-                
-                    info.Summary =
-                        Encoding.UTF8.GetString(
-                            Encoding.Default.GetBytes(
-                                htmlInfo.DocumentNode.SelectSingleNode("//table[4]/tr/td")?.InnerText));
+                        }
+                        info.Summary = Encoding.UTF8.GetString(Encoding.Default.GetBytes(result)).Replace("\n", "").Replace(";", ",");
 
-                    info.PageUrl = item;
+                        info.PageUrl = item;
 
-
-
-                    var a = 0;
-
-
-
-                    
-
-
-
+                        listBooks.Add(info);
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
                 }
-
             });
-
-
-
-
 
             return listBooks;
         }
 
 
+        public string ConvertInfoToString(List<BookOfInostrankabooks> info)
+        {
+            StringBuilder theBuilder = new StringBuilder();
+            foreach (var item in info)
+            {
+                theBuilder.Append(item.Name);
+                theBuilder.Append(";");
+                theBuilder.Append(item.Photo);
+                theBuilder.Append(";");
+                theBuilder.Append(item.Category);
+                theBuilder.Append(";");
+                theBuilder.Append(item.Author);
+                theBuilder.Append(";");
+                theBuilder.Append(item.Summary);
+                theBuilder.Append(";");
+                theBuilder.Append(item.PageUrl);
+                theBuilder.Append("\n");
+            }
 
+            return theBuilder.ToString();
+        }
 
     }
 }

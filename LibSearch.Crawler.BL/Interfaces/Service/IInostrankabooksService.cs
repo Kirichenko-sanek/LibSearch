@@ -12,6 +12,6 @@ namespace LibSearch.Crawler.BL.Interfaces.Service
         List<string> GetListPages(string url, string mainUrl);
 
         List<BookOfInostrankabooks> GetInfoBooks(List<string> urlList, string mainUrl);
-
+        string ConvertInfoToString(List<BookOfInostrankabooks> info);
     }
 }

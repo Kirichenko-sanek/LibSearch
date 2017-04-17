@@ -52,19 +52,8 @@ namespace LibSearch.Crawler.BL.Manager
             });
 
             var info = _inostrankabooksService.GetInfoBooks(pages, mainUrl);
-
-            var a = 0;
-
-
-
-
-            //var pages = _inostrankabooksService.GetListPages(series);
-
-
-
-
+            var infoStr = _inostrankabooksService.ConvertInfoToString(info);
+            _repository.WriteToFile(infoStr, "inostrankabooks", folder);
         }
-
-
     }
 }
