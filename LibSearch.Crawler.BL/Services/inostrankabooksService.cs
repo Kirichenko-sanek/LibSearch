@@ -132,9 +132,9 @@ namespace LibSearch.Crawler.BL.Services
                                 Encoding.Default.GetBytes(
                                     htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/h1")?.InnerText)).Replace(";", ",");
 
-                        info.Photo =
-                            htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/img")?
-                                .GetAttributeValue("src", "");
+                        info.Photo = mainUrl +
+                                     htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/img")?
+                                         .GetAttributeValue("src", "");
 
                         info.Category =
                             Encoding.UTF8.GetString(
