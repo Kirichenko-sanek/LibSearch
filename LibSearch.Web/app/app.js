@@ -25,6 +25,10 @@
       .when("/books", {
       	templateUrl: "app/book/book.html",
         controller: "bookController"
+      })
+      .when("/bookInfo/:id",{
+        templateUrl: "app/bookInfo/bookInfo.html",
+        controller: "bookInfoController"
       });
   };
 

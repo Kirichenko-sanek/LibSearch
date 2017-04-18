@@ -8,7 +8,7 @@
 				<div id="sidebar">
 					<section class="box">
 						<header>
-							<h2>Select a category</h2>
+							<h2>Categories</h2>
 							<ul>
 								<li ng-repeat="category in model.categories | orderBy: category">
 									<a href="" ng-click="getBooks(category)">{{category}}</a>
@@ -21,6 +21,9 @@
 			<div class="8u 12u(mobile) important(mobile)">
 					<div id="content">
 						<div class="row 150%">
+							<div class="12u 12u(mobile)" ng-if="model.books.length === 0">
+								<h1>Please select a category</h1>
+							</div>
 							<div class="6u 12u(mobile)" ng-repeat="book in model.books">
 								<section class="box">
 									<header>
@@ -31,6 +34,8 @@
 										<img ng-if="!book.Photo" ng-src="images/book-placeholder.jpg" alt="" />
 									</a>
 									<p>Hello</p>
+
+									<a href="" ng-click="goInfo(book.IdBook)" class="button style1">More</a>
 
 
 								</section>

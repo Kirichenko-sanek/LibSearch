@@ -122,6 +122,8 @@
     <Content Include="app\admin\admin.html" />
     <Content Include="app\admin\adminController.js" />
     <Content Include="app\app.js" />
+    <Content Include="app\bookInfo\bookInfo.html" />
+    <Content Include="app\bookInfo\bookInfoController.js" />
     <Content Include="app\book\book.html" />
     <Content Include="app\book\bookController.js" />
     <Content Include="app\home\home.html" />
