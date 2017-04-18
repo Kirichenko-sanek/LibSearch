@@ -12,6 +12,10 @@
 
 		bookService.getBook($scope.model, currentId);
 
+		$scope.goSite = function(){
+			window.open($scope.model.book.PageUrl);
+		};
+
 		var a = 0;
   };
 })(angular.module('LibSearch'));

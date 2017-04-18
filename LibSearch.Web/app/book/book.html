@@ -33,31 +33,14 @@
 										<img ng-if="book.Photo" style="height: 450px; width: 300px;" ng-src="{{book.Photo}}" alt="" />
 										<img ng-if="!book.Photo" ng-src="images/book-placeholder.jpg" alt="" />
 									</a>
-									<p>Hello</p>
+									<p>{{book.Author}}</p>
 
-									<a href="" ng-click="goInfo(book.IdBook)" class="button style1">More</a>
-
-
+									<a href="" ng-click="goInfo(book.IdBook)" class="button style1">More info</a>
 								</section>
 							</div>
-
 						</div>
 					</div>
 				</div>	
 		</div>
 	</div>
-
-
-
 </div>
-
-
-
-
-<!-- <br>
-<div ng-repeat="book in model.books">
-	<div>
-		{{book.Name}}
-	</div>
-	
-</div> -->
