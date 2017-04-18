@@ -21,6 +21,10 @@
       .when("/admin", {
       	templateUrl: "app/admin/admin.html",
         controller: "adminController"
+      })
+      .when("/books", {
+      	templateUrl: "app/book/book.html",
+        controller: "bookController"
       });
   };
 

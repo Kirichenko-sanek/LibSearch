@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Web;
+using AutoMapper;
 using LibSearch.Core.Intefaces.Manager;
 using LibSearch.Core.Intefaces.Repository;
 using LibSearch.Core.Intefaces.Validator;
 using LibSearch.Core.Model;
+using LibSearch.Core.ViewModel;
 
 namespace LibSearch.BL.Manager
 {
@@ -54,6 +58,42 @@ namespace LibSearch.BL.Manager
                 var a = 9;
 
             }
+        }
+
+
+
+        public List<string> GetCategory()
+        {
+            var result = new List<string>();
+            var books = GetAll();
+            foreach (var book in books)
+            {
+                if (result.Count == 0)
+                {
+                    result.Add(book.Category);
+                }
+                else
+                {
+                    if (result.Contains(book.Category))
+                    {
+                        continue;
+                    }
+                    result.Add(book.Category);
+                }
+            }
+
+            return result;
+        }
+
+        public List<BookViewModel> GetBooks(string category)
+        {
+            var result = new List<BookViewModel>();
+            var books = GetAll().Where(x => x.Category == category);
+            foreach (var book in books)
+            {
+                result.Add(Mapper.Map<Book, BookViewModel>(book));
+            }
+            return result;
         }
 
 

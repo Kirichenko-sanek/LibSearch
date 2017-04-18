@@ -1,0 +1,16 @@
+<div>
+	Book Page
+</div>
+<div ng-repeat="category in model.categories">
+	<div ng-click="getBooks(category)">
+		{{category}}
+	</div>
+	
+</div>
+<br>
+<div ng-repeat="book in model.books">
+	<div>
+		{{book.Name}}
+	</div>
+	
+</div>

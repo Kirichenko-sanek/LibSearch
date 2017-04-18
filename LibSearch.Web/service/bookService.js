@@ -4,7 +4,9 @@
 
   function bookService($http, $location, $rootScope) {
     var service = {
-      addAllBook: addAllBook
+      addAllBook: addAllBook,
+      getCategories: getCategories,
+      getBooks: getBooks
     }
 
     function addAllBook(file) {
@@ -15,6 +17,38 @@
           var a = 0;
         });
     };
+
+    function getCategories(model) {
+      $http.get($rootScope.localAddress + 'api/account/getCategories')
+        .then(function(data) {
+          model.categories = data.data;
+        })
+        .catch(function(result) {
+          if (status === 401) {
+            $location.path('/login');
+          }
+          console.log('Result: ', result);
+        })
+        .finally(function() {
+          console.log('Finally');
+        });
+    };
+
+    function getBooks(model, category) {
+      $http.post($rootScope.localAddress + 'api/account/getBooks', '"' + category + '"')
+        .then(function(data) {
+          model.books = data.data;
+        })
+        .catch(function(result) {
+          if (status === 401) {
+            $location.path('/login');
+          }
+          console.log('Result: ', result);
+        })
+        .finally(function() {
+          console.log('Finally');
+        });
+    }
 
 
 
