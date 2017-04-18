@@ -1,16 +1,47 @@
-<div>
-	Book Page
-</div>
-<div ng-repeat="category in model.categories">
-	<div ng-click="getBooks(category)">
-		{{category}}
+<div class="wrapper style2">
+	<div class="title">
+		Books Catalog
 	</div>
-	
+	<div id="main" class="container">
+		<div class="row 150%">
+			<div class="4u 12u(mobile)">
+				<div id="sidebar">
+					<section class="box">
+						<header>
+							<h2>Select a category</h2>
+							<ul>
+								<li ng-repeat="category in model.categories">
+									<a href="" ng-click="getBooks(category)">{{category}}</a>
+								</li>
+							</ul>
+						</header>
+					</section>
+
+
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+			</div>	
+		</div>
+	</div>
 </div>
-<br>
+
+
+
+
+<!-- <br>
 <div ng-repeat="book in model.books">
 	<div>
 		{{book.Name}}
 	</div>
 	
-</div>
+</div> -->

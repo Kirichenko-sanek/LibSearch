@@ -5,21 +5,20 @@
   <?xml version="1.0" encoding="windows-1251"?>
 
   <meta charset="utf-8"/>
-  <base href="/#/" />
+  <base href="/#!/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> | LibSearch</title>
 
-  <!-- htmlbuild:css -->
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-   <!-- endbuild -->
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+
 
 
 </head>
 
-<body ng-controller="rootController" class="homepage">
+<body ng-controller="rootController" ng-class="{'homepage' : pageHome, 'left-sidebar': !pageHome}">
   <div id="page-wrapper">
+    
     <div id="header-wrapper" class="wrapper">
       <div id="header">
         <div id="logo"> 
@@ -30,9 +29,9 @@
         <nav id="nav">
           <ul>
             <li class="current"><a href="/">Home</a></li>
-            <li><a href="/books">Books</a></li>
+            <li><a ng-href="/#!/books">Books</a></li>
             <li>
-              <a ng-if="!userLog" href="/login">Login</a>
+              <a ng-if="!userLog" href="/#!/login">Login</a>
               <a ng-if="userLog" href="" ng-click="logoff()">LogOff</a>
             </li>
           </ul>
@@ -44,26 +43,19 @@
 
 
 
-
+    <div class="{{ pageClass }}" ng-view="ng-view"></div>
 
     
   </div>
  
 
-  
 
 
-<!-- <div class="page {{ pageClass }}" ng-view="ng-view"></div> -->
-	
-	
-	<!-- htmlbuild:js -->
 	<script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.dropotron.min.js"></script>
   <script src="assets/js/skel.min.js"></script>
   <script src="assets/js/skel-viewport.min.js"></script>
   <script src="assets/js/util.js"></script>
-  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-  <script src="assets/js/main.js"></script>
 
 	<script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
@@ -87,7 +79,6 @@
   <script src="service/logInService.js"></script>
   <script src="service/bookService.js"></script>
 
-	<!-- endbuild  -->
 
 </body>
 

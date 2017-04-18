@@ -119,7 +119,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\admin\admin.html" />
+    <Content Include="app\admin\adminController.js" />
     <Content Include="app\app.js" />
+    <Content Include="app\book\book.html" />
+    <Content Include="app\book\bookController.js" />
+    <Content Include="app\home\home.html" />
+    <Content Include="app\home\homeController.js" />
+    <Content Include="app\home\rootController.js" />
+    <Content Include="app\login\login.html" />
+    <Content Include="app\login\logInController.js" />
     <Content Include="assets\css\font-awesome.min.css" />
     <Content Include="assets\css\ie8.css" />
     <Content Include="assets\css\images\overlay.png" />
@@ -147,6 +156,9 @@
     <Content Include="images\pic08.jpg" />
     <Content Include="images\pic09.jpg" />
     <Content Include="images\pic10.jpg" />
+    <Content Include="index.html" />
+    <Content Include="service\bookService.js" />
+    <Content Include="service\logInService.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

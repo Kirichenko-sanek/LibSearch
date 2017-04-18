@@ -9,7 +9,7 @@
       localStorageService.remove('authorizationData');
       $rootScope.userLog = null;
       $rootScope.userNameLog = '';
-      $location.path('/home');
+      $location.path('/');
     }
   }
 })(angular.module('LibSearch'));

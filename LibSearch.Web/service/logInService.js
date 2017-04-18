@@ -24,7 +24,7 @@
                 if (data.data === 'Admin') {
                   $location.path('/admin');
                 } else {
-                  $location.path('/home');
+                  $location.path('/');
                 }
 
               })
