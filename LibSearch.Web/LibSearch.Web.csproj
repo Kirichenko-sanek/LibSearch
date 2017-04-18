@@ -149,6 +149,7 @@
     <Content Include="assets\js\util.js" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\book-placeholder.jpg" />
+    <Content Include="images\book.jpg" />
     <Content Include="images\pic01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\pic03.jpg" />
