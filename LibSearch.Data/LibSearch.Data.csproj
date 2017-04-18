@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Mapping\BookMap.cs" />
-    <Compile Include="Mapping\GenreMap.cs" />
     <Compile Include="Mapping\PhotoMap.cs" />
     <Compile Include="Mapping\RolesMap.cs" />
     <Compile Include="Mapping\SavedBookMap.cs" />

@@ -1,15 +1,14 @@
-﻿namespace LibSearch.Core.Model
+﻿namespace LibSearch.Core.ViewModel
 {
-    public class Book : BaseEntity
+    public class BookViewModel
     {
+        public long IdBook { get; set; }
         public string Name { get; set; }
         public long IdPhoto { get; set; }
         public string Category { get; set; }
         public string Author { get; set; }
         public string Summary { get; set; }
         public string PageUrl { get; set; }
-
-        public virtual Photo Photo { get; set; }
-
+        public string Photo { get; set; }
     }
 }

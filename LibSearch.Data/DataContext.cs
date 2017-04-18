@@ -9,7 +9,6 @@ namespace LibSearch.Data
     public class DataContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
-        public DbSet<Genre> Genres { get; set; }
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<SavedBook> SavedBooks { get; set; }
@@ -24,7 +23,6 @@ namespace LibSearch.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new BookMap());
-            modelBuilder.Configurations.Add(new GenreMap());
             modelBuilder.Configurations.Add(new PhotoMap());
             modelBuilder.Configurations.Add(new RolesMap());
             modelBuilder.Configurations.Add(new SavedBookMap());
@@ -33,7 +31,7 @@ namespace LibSearch.Data
 
 
 
-        private class LibSearchInitializer : DropCreateDatabaseAlways<DataContext>
+        private class LibSearchInitializer : CreateDatabaseIfNotExists<DataContext>
         {
             protected override void Seed(DataContext context)
             {

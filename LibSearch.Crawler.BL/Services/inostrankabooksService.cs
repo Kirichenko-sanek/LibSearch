@@ -132,9 +132,9 @@ namespace LibSearch.Crawler.BL.Services
                                 Encoding.Default.GetBytes(
                                     htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/h1")?.InnerText)).Replace(";", ",");
 
-                        info.Photo =
-                            htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/img")?
-                                .GetAttributeValue("src", "");
+                        info.Photo = mainUrl +
+                                     htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/img")?
+                                         .GetAttributeValue("src", "");
 
                         info.Category =
                             Encoding.UTF8.GetString(
@@ -159,7 +159,7 @@ namespace LibSearch.Crawler.BL.Services
                             }
 
                         }
-                        info.Summary = Encoding.UTF8.GetString(Encoding.Default.GetBytes(result)).Replace("\n", "").Replace(";", ",");
+                        info.Summary = Encoding.UTF8.GetString(Encoding.Default.GetBytes(result)).Replace("\n", "").Replace(";", ",").Replace("Купить электронную книгу:&nbsp,&nbsp,", "");
 
                         info.PageUrl = item;
 

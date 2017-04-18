@@ -21,7 +21,12 @@
             .then(
               function(data) {
                 $rootScope.userLog = data.data;
-                $location.path('/home');
+                if (data.data === 'Admin') {
+                  $location.path('/admin');
+                } else {
+                  $location.path('/home');
+                }
+
               })
             .catch(function(result) {
               console.log('Result: ', result);

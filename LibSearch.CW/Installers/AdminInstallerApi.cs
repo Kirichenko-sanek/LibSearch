@@ -31,11 +31,15 @@ namespace LibSearch.CW.Installers
             //Validator
             container.Register(
                 Component.For(typeof(IValidator<User>)).ImplementedBy(typeof(UserValidator)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IValidator<Book>)).ImplementedBy(typeof(BookValidator)).LifestyleTransient());
 
             //Managers
             container.Register(Component.For(typeof(IManager<>)).ImplementedBy(typeof(Manager<>)).LifestyleTransient());
             container.Register(
                 Component.For(typeof(IUserManager<>)).ImplementedBy(typeof(UserManager<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IBookManager<>)).ImplementedBy(typeof(BookManager<>)).LifestyleTransient());
         }
     }
 }

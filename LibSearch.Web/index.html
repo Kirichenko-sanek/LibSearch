@@ -20,6 +20,10 @@
 <body ng-controller="rootController">
 header
 
+<div>
+  <a href="/books">Books</a>
+</div>
+
 <div ng-if="!userLog">
 	<a href="/login">Login</a>
 </div>
@@ -50,9 +54,12 @@ header
   <script src="app/app.js"></script>
   <script src="app/home/rootController.js"></script>
   <script src="app/home/homeController.js"></script>
-  <script src="app/LogIn/logInController.js"></script>
+  <script src="app/login/logInController.js"></script>
+  <script src="app/admin/adminController.js"></script>
+  <script src="app/book/bookController.js"></script>
 
   <script src="service/logInService.js"></script>
+  <script src="service/bookService.js"></script>
 
 	<!-- endbuild  -->
 
