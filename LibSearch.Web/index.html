@@ -10,34 +10,60 @@
   <title> | LibSearch</title>
 
   <!-- htmlbuild:css -->
-  <!-- <link href="/bower_components/angular-material/angular-material.css" rel="stylesheet"/>
-  <link href="/bower_components/ngprogress/ngProgress.css" rel="stylesheet"/> -->
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
    <!-- endbuild -->
 
 
 </head>
 
-<body ng-controller="rootController">
-header
+<body ng-controller="rootController" class="homepage">
+  <div id="page-wrapper">
+    <div id="header-wrapper" class="wrapper">
+      <div id="header">
+        <div id="logo"> 
+          <h1><a href="/">Lib search</a></h1>
+          <p>Можно придумать текст, или нет)</p>
+        </div>
 
-<div>
-  <a href="/books">Books</a>
-</div>
+        <nav id="nav">
+          <ul>
+            <li class="current"><a href="/">Home</a></li>
+            <li><a href="/books">Books</a></li>
+            <li>
+              <a ng-if="!userLog" href="/login">Login</a>
+              <a ng-if="userLog" href="" ng-click="logoff()">LogOff</a>
+            </li>
+          </ul>
+        </nav>
 
-<div ng-if="!userLog">
-	<a href="/login">Login</a>
-</div>
+      </div>
+    </div>
 
-<div ng-if="userLog">
-	<a href="" ng-click="logoff()">LogOff</a>
-</div>
 
-<div class="page {{ pageClass }}" ng-view="ng-view"></div>
+
+
+
+
+    
+  </div>
+ 
+
+  
+
+
+<!-- <div class="page {{ pageClass }}" ng-view="ng-view"></div> -->
 	
 	
 	<!-- htmlbuild:js -->
-	<!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
-	<!-- <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
+	<script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.dropotron.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/skel-viewport.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+  <script src="assets/js/main.js"></script>
 
 	<script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
