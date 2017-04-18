@@ -10,29 +10,40 @@
 						<header>
 							<h2>Select a category</h2>
 							<ul>
-								<li ng-repeat="category in model.categories">
+								<li ng-repeat="category in model.categories | orderBy: category">
 									<a href="" ng-click="getBooks(category)">{{category}}</a>
 								</li>
 							</ul>
 						</header>
 					</section>
-
-
-
 				</div>
+			</div>
+			<div class="8u 12u(mobile) important(mobile)">
+					<div id="content">
+						<div class="row 150%">
+							<div class="6u 12u(mobile)" ng-repeat="book in model.books">
+								<section class="box">
+									<header>
+										<h2 style="height: 50px;">{{book.Name}}</h2>
+									</header>
+									<a href="" class="image featured">
+										<img ng-if="book.Photo" style="height: 450px; width: 300px;" ng-src="{{book.Photo}}" alt="" />
+										<img ng-if="!book.Photo" ng-src="images/book-placeholder.jpg" alt="" />
+									</a>
+									<p>Hello</p>
 
 
+								</section>
+							</div>
 
-
-
-
-
-
-
-
-			</div>	
+						</div>
+					</div>
+				</div>	
 		</div>
 	</div>
+
+
+
 </div>
 
 
