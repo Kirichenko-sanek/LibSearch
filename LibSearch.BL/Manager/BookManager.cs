@@ -96,6 +96,13 @@ namespace LibSearch.BL.Manager
             return result;
         }
 
+        public BookViewModel GetBook(long id)
+        {
+            var book = GetById(id);
+            var result = Mapper.Map<Book, BookViewModel>(book);
+            return result;
+        }
+
 
     }
 }

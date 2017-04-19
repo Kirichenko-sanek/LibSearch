@@ -140,8 +140,10 @@ namespace LibSearch.Crawler.BL.Services
                             Encoding.UTF8.GetString(
                                 Encoding.Default.GetBytes(
                                     htmlInfo.DocumentNode.SelectSingleNode("//tr[@valign='top']/td/a[@class='seria_sm']")
-                                        ?
-                                        .InnerText)).Replace(";", ",");
+                                        ?.InnerText))
+                                .Replace(";", ",")
+                                .Replace("(Издательство «Иностранка»)", "")
+                                .Replace("(Издательство «КоЛибри»)", "");
 
                         info.Author =
                             Encoding.UTF8.GetString(

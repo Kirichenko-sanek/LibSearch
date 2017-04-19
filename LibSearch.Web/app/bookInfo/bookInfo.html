@@ -1,0 +1,35 @@
+<div class="wrapper style2">
+	<div 
+		class="title" 
+		style="line-height: 30px;
+			padding-top: 20px;">
+		{{model.book.Name}}
+	</div>
+	<div id="main" class="container">
+		<div class="row">
+			<div class="4u 12u(mobile)">
+				<div id="sidebar">
+					<section class="box">
+						<img style="height: 450px; width: 300px;" ng-src="{{model.book.Photo}}" alt="" />
+					</section>
+				</div>
+			</div>
+			<div class="8u 12u(mobile) important(mobile)">
+				<div id="content">
+					<article class="box post">
+						<header class="style1">
+							<h2 style="text-align: left;">
+								Author: {{model.book.Author}}
+							</h2>	
+						</header>
+						<p>
+							{{model.book.Summary}}
+						</p>
+						<a href="" ng-click="goSite()" class="button style1">Go to the site</a>
+
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -42,6 +42,13 @@ namespace LibSearch.Controllers
             return _bookManager.GetBooks(category);
         }
 
+        [Route("book/{id}")]
+        [HttpGet]
+        public BookViewModel GetBook(long id)
+        {
+            return _bookManager.GetBook(id);
+        }
+
 
     }
 }

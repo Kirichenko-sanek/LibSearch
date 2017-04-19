@@ -7,8 +7,8 @@
   run.$inject = ['localStorageService', '$http', '$rootScope'];
 
   function config($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
+    //$locationProvider.html5Mode(true);
+    //$locationProvider.hashPrefix('!');
     $routeProvider
       .when('/', {
         templateUrl: "app/home/home.html",
@@ -25,6 +25,10 @@
       .when("/books", {
       	templateUrl: "app/book/book.html",
         controller: "bookController"
+      })
+      .when("/bookInfo/:id",{
+        templateUrl: "app/bookInfo/bookInfo.html",
+        controller: "bookInfoController"
       });
   };
 

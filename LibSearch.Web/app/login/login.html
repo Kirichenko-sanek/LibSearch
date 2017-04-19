@@ -1,18 +1,36 @@
-loginPage
-
-<div>
-	<form ng-submit="login()" name="userLoginForm" role="form" method="post">
-		<input 
-			type="email" 
-			name="email" 
-			ng-model="model.email" 
-			required>
-		<input 
-			type="password" 
-			name="pass" 
-			ng-model="model.password" 
-			required>
-
-		<button type="submit">LogIn</button>
-	</form>
+<div class="wrapper style2">
+	<div class="title">LogIn</div>
+	<div id="main" class="container">
+		<div class="row 150%">
+			<div class="6u 12u(mobile)">
+				<section>
+					<form ng-submit="login()" name="userLoginForm" role="form" method="post">
+						<div class="row 50%">
+							<div class="12u">
+								<input 
+									type="email" 
+									name="email"
+									placeholder="Enter email" 
+									ng-model="model.email" 
+									required>
+							</div>
+							<div class="12u">
+								<input 
+									type="password" 
+									name="pass"
+									placeholder="Enter password" 
+									ng-model="model.password" 
+									required>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<input type="submit" class="style1" value="LogIn" />
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>

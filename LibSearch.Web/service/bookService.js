@@ -1,12 +1,13 @@
 (function(app) {
   app.factory('bookService', bookService);
-  bookService.$inject = ['$http', '$location', '$rootScope'];
+  bookService.$inject = ['$http', '$location', '$rootScope', '$routeParams'];
 
-  function bookService($http, $location, $rootScope) {
+  function bookService($http, $location, $rootScope, $routeParams) {
     var service = {
       addAllBook: addAllBook,
       getCategories: getCategories,
-      getBooks: getBooks
+      getBooks: getBooks,
+      getBook: getBook
     }
 
     function addAllBook(file) {
@@ -48,7 +49,23 @@
         .finally(function() {
           console.log('Finally');
         });
-    }
+    };
+
+    function getBook(model, id) {
+      $http.get($rootScope.localAddress + 'api/account/book/' + id)
+        .then(function(data) {
+          model.book = data.data;
+        })
+        .catch(function(result) {
+          if (status === 401) {
+            $location.path('/login');
+          }
+          console.log('Result: ', result);
+        })
+        .finally(function() {
+          console.log('Finally');
+        });
+    };
 
 
 

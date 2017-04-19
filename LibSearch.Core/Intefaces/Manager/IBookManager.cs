@@ -10,5 +10,6 @@ namespace LibSearch.Core.Intefaces.Manager
         void AddBooksOnDB(HttpPostedFileBase filebase);
         List<string> GetCategory();
         List<BookViewModel> GetBooks(string category);
+        BookViewModel GetBook(long id);
     }
 }
