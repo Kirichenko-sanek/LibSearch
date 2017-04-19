@@ -1,8 +1,23 @@
-<div>
-  Admin Page
+<div class="wrapper style2">
+	<div class="title">Admin</div>
+	<div id="main" class="container">
+		<div class="row 150%">
+			<div class="6u 12u(mobile)">
+				<section>
+					<form ng-submit="addInfo()" class="form-signin" role="form" method="post" enctype="multipart/form-data">
+						<div class="row 50%">
+							<div class="12u">
+								<input type="file" oi-file="options">
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<input type="submit" class="style1" value="AddInfo" />
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>
-<form ng-submit="addInfo()" class="form-signin" role="form" method="post" enctype="multipart/form-data">
-  <h3>Photo</h3>
-  <input type="file" oi-file="options">
-  <input type="submit" value="AddInfo"/>
-</form>
