@@ -109,7 +109,7 @@ namespace LibSearch.Crawler.BL.Services
         public List<BookOfInostrankabooks> GetInfoBooks(List<string> urlList, string mainUrl)
         {
             var listBooks = new List<BookOfInostrankabooks>();
-
+            ProgresMax = urlList.Count; 
             Parallel.ForEach(urlList, item =>
             {
                 using (var wClient = new WebClient())
@@ -166,14 +166,15 @@ namespace LibSearch.Crawler.BL.Services
                         info.PageUrl = item;
 
                         listBooks.Add(info);
+                        ProgresNow++;
                     }
                     catch (Exception)
                     {
-                        return;
+                        ProgresNow++;
                     }
                 }
             });
-
+            ProgresNow = ProgresMax;
             return listBooks;
         }
 
