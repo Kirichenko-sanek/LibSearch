@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch", "LibSearch\LibSearch.csproj", "{F78D8055-805B-46B9-A40E-B9E2E2F60909}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch.Crawler", "LibSearch.Crawler\LibSearch.Crawler.csproj", "{26F34651-E0E4-496E-B3D4-709336429653}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch.Crawler.BL", "LibSearch.Crawler.BL\LibSearch.Crawler.BL.csproj", "{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSearch.Test", "LibSearch.Test\LibSearch.Test.csproj", "{2A1D1A0A-2D89-47CB-9BA7-3CB93048E33C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2A9F3E0-03FC-40F9-83C7-D48D9225BD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A1D1A0A-2D89-47CB-9BA7-3CB93048E33C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A1D1A0A-2D89-47CB-9BA7-3CB93048E33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A1D1A0A-2D89-47CB-9BA7-3CB93048E33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A1D1A0A-2D89-47CB-9BA7-3CB93048E33C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

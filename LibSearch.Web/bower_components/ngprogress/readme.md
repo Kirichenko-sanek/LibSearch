@@ -1,5 +1,7 @@
 ## ngProgress.js
 
+[![VolHelp](http://i.imgur.com/EruECZ9.png)](https://volhelp1.typeform.com/to/jKxoH2)
+
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/VictorBjelkholm/ngProgress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Build Status](https://travis-ci.org/VictorBjelkholm/ngProgress.png?branch=master)](https://travis-ci.org/VictorBjelkholm/ngProgress)
@@ -58,17 +60,17 @@ to hide it
 ```javascript
 ngProgress.start();
 ```
-* **setHeight** - Sets the height of the progressbar. Use any valid CSS value
+* **height** - Sets the height of the progressbar. Use any valid CSS value
 Eg '10px', '1em' or '1%'
 
 ```javascript
-ngProgress.setHeight('10px');
+ngProgress.height('10px');
 ```
 
-* **setColor** - Sets the color of the progressbar and it's shadow. Use any valid HTML color
+* **color** - Sets the color of the progressbar and it's shadow. Use any valid HTML color
 
 ```javascript
-ngProgress.setColor('#fff');
+ngProgress.color('#fff');
 ```
 
 * **status** - Returns on how many percent the progressbar is at. Should'nt be needed
